@@ -11,20 +11,21 @@ class Day1Spec extends FlatSpec with Matchers {
     Day1.partA(List("+1", "+1", "+1")) shouldBe 3
     Day1.partA(List("+1", "+1", "-2")) shouldBe 0
     Day1.partA(List("-1", "-2", "-3")) shouldBe -6
-    runPuzzle(input.split("\n").toList)(Day1.partA)
+    runPuzzle(cleanedInput)(Day1.partA)
   }
 
   it should "solve second part of the puzzle" in {
-    Day1.partA(List("+1", "-1")) shouldBe 0
-    Day1.partA(List("+3", "+3", "+4", "-2", "-4")) shouldBe 10
-    Day1.partA(List("-6", "+3", "+8", "+5", "-6")) shouldBe 5
-    Day1.partA(List("+7", "+7", "-2", "-7", "-4")) shouldBe 14
-    runPuzzle(input.split("\n").toList)(Day1.partB)
+    Day1.partB(List("+1", "-1")) shouldBe 0
+    Day1.partB(List("+3", "+3", "+4", "-2", "-4")) shouldBe 10
+    Day1.partB(List("-6", "+3", "+8", "+5", "-6")) shouldBe 5
+    Day1.partB(List("+7", "+7", "-2", "-7", "-4")) shouldBe 14
+    runPuzzle(cleanedInput)(Day1.partB)
   }
 }
 
 object Day1Spec {
-  val input =
+  lazy val cleanedInput = input.split("\n").toList.filterNot(_.trim.isEmpty)
+  lazy val input =
     """
       |-16
       |+12
