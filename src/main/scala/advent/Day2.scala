@@ -1,5 +1,7 @@
 package advent
 
+import scala.annotation.tailrec
+
 object Day2 {
 
   /**
@@ -20,7 +22,30 @@ object Day2 {
     doubles.sum * triples.sum
   }
 
-  def partB(input: List[String]): Int =
-    ???
+  def partB(input: List[String]): Option[String] = {
+    def ngramsIsh(inputStr: String, n: Int): List[String] = {
+      /**
+        * Collect the "ngrams" in a Set to prevent duplicate "ngrams" from a single string
+        */
+      @tailrec
+      def loop(str: String, idx: Int, result: Set[String]): List[String] = {
+        if (idx >= str.length) {
+          result.toList
+        } else {
+          val (start, end) = str.splitAt(idx)
+          val gram = start + end.drop(str.length - n)
+          loop(str, idx + 1, result + gram)
+        }
+      }
+      loop(inputStr, 0, Set.empty)
+    }
+
+    input
+      .flatMap(str => ngramsIsh(str, str.length - 1))
+      .groupBy(identity)
+      .mapValues(_.size)
+      .find { case (_, count) => count == 2 }
+      .map(_._1)
+  }
 
 }

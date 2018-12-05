@@ -16,17 +16,32 @@ class Day2Spec extends FlatSpec with Matchers {
       |aabcdd
       |abcdee
       |ababab
-    """.stripMargin.trim.split("\n").toList
+    """.stripMargin
 
-    Day2.partA(testInput) shouldBe 12
-    runPuzzle(input)(Day2.partA)
+    Day2.partA(clean(testInput)) shouldBe 12
+    runPuzzle(clean(rawInput))(Day2.partA)
   }
 
-  it should "solve second part of the puzzle" in pending
+  it should "solve second part of the puzzle" in {
+    val testInput =
+      """
+        |abcde
+        |fghij
+        |klmno
+        |pqrst
+        |fguij
+        |axcye
+        |wvxyz
+      """.stripMargin
+    Day2.partB(clean(testInput)) shouldBe Some("fgij")
+    runPuzzle(clean(rawInput))(Day2.partB)
+  }
 }
 
 object Day2Spec {
-  lazy val input = rawInput.trim.split("\n").toList
+  def clean(input: String): List[String] =
+    input.trim.split("\n").toList
+
   lazy val rawInput =
     """
       |oiwcdpbseqgxryfmlpktnupvza
