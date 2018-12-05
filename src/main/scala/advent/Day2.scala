@@ -32,8 +32,7 @@ object Day2 {
         if (idx >= str.length) {
           result.toList
         } else {
-          val (start, end) = str.splitAt(idx)
-          val gram = start + end.drop(str.length - n)
+          val gram = str.take(idx) + str.drop(idx + str.length - n)
           loop(str, idx + 1, result + gram)
         }
       }
