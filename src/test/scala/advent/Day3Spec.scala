@@ -19,7 +19,17 @@ class Day3Spec extends FlatSpec with Matchers {
     runPuzzle(clean(rawInput))(Day3.partA)
   }
 
-  it should "solve second part of the puzzle" in pending
+  it should "solve second part of the puzzle" in {
+    val testInput =
+      """
+        |#1 @ 1,3: 4x4
+        |#2 @ 3,1: 4x4
+        |#3 @ 5,5: 2x2
+      """.stripMargin
+
+    Day3.partB(clean(testInput)) shouldBe Some("#3")
+    runPuzzle(clean(rawInput))(Day3.partB)
+  }
 }
 
 object Day3Spec {
