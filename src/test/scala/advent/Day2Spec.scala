@@ -39,10 +39,7 @@ class Day2Spec extends FlatSpec with Matchers {
 }
 
 object Day2Spec {
-  def clean(input: String): List[String] =
-    input.trim.split("\n").toList
-
-  lazy val rawInput =
+  val rawInput =
     """
       |oiwcdpbseqgxryfmlpktnupvza
       |oiwddpbsuqhxryfmlgkznujvza

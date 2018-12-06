@@ -33,10 +33,7 @@ class Day3Spec extends FlatSpec with Matchers {
 }
 
 object Day3Spec {
-  def clean(input: String): List[String] =
-    input.trim.split("\n").toList
-
-  lazy val rawInput =
+  val rawInput =
     """
       |#1 @ 108,350: 22x29
       |#2 @ 370,638: 13x12

@@ -5,4 +5,7 @@ object util {
     println("Executing puzzle")
     println(s"Result: ${program(arg)}")
   }
+
+  def clean(input: String): List[String] =
+    input.trim.split("\n").toList
 }
