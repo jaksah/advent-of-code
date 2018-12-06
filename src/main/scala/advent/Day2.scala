@@ -2,7 +2,7 @@ package advent
 
 import scala.annotation.tailrec
 
-object Day2 {
+object Day2 extends Puzzle[Int, Option[String]] {
 
   /**
     * Create a checksum of the list

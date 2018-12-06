@@ -2,7 +2,7 @@ package advent
 
 import scala.util.matching.Regex
 
-object Day3 {
+object Day3 extends Puzzle[Int, Option[String]] {
 
   case class Pixel(x: Int, y: Int)
 

@@ -2,7 +2,7 @@ package advent
 
 import scala.annotation.tailrec
 
-object Day1 {
+object Day1 extends Puzzle[Int, Int] {
   private def asInt(freq: String): Int = freq.toList match {
     case '+' :: xs => new String(xs.toArray).toInt
     case '-' :: xs => -new String(xs.toArray).toInt
