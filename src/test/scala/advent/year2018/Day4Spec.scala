@@ -1,4 +1,4 @@
-package advent
+package advent.year2018
 
 import advent.util._
 import org.scalatest.{FlatSpec, Matchers}

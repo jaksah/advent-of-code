@@ -1,7 +1,7 @@
-package advent
+package advent.year2018
 
+import advent.util.{clean, runPuzzle}
 import org.scalatest._
-import util._
 
 import scala.io.Source
 

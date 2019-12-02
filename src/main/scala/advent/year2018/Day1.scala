@@ -1,4 +1,6 @@
-package advent
+package advent.year2018
+
+import advent.Puzzle
 
 import scala.annotation.tailrec
 
