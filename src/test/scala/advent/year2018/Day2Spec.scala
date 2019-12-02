@@ -7,7 +7,7 @@ import scala.io.Source
 
 class Day2Spec extends FlatSpec with Matchers {
 
-  val input: List[String] = Source.fromResource("Day2.txt").getLines().toList
+  val input: List[String] = Source.fromResource("2018/Day2.txt").getLines().toList
 
   "Day2" should "solve first part of the puzzle" in {
     val testInput = """
