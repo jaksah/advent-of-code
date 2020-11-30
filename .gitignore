@@ -16,3 +16,9 @@ project/plugins/project/
 .scala_dependencies
 .worksheet
 .idea
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
