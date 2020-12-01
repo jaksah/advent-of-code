@@ -1,6 +1,11 @@
 package advent
 
 import org.junit.Test
+import java.util.*
+import kotlin.concurrent.timer
+import kotlin.concurrent.timerTask
+import kotlin.system.measureTimeMillis
+import kotlin.time.measureTime
 
 abstract class PuzzleRunner<A, B> {
     abstract val input: List<String>
@@ -10,27 +15,32 @@ abstract class PuzzleRunner<A, B> {
 
     @Test
     fun `Part A`() {
-        printHeader("Part A")
-                .let { puzzle.partA(input) }
-                .also(this::printResult)
+        measureTimeMillis {
+            printHeader("Part A")
+                    .let { puzzle.partA(input) }
+                    .also(::printResult)
+        }.also(::printFooter)
     }
 
     @Test
     fun `Part B`() {
-        printHeader("Part B")
-                .let { puzzle.partB(input) }
-                .also(this::printResult)
-    }
-
-    private fun <T> printResult(result: T) {
-        println("############### RESULT ###############")
-        println(result)
-        println("######################################")
-        println("")
+        measureTimeMillis {
+            printHeader("Part B")
+                    .let { puzzle.partB(input) }
+                    .also(::printResult)
+        }.also(::printFooter)
     }
 
     private fun printHeader(part: String) {
-        println("######################################")
-        println("## Running Puzzle for $day - $part ##")
+        println("Running Puzzle for $day - $part")
+    }
+
+    private fun <T> printResult(result: T) {
+        println("Result: $result")
+    }
+
+    private fun printFooter(millis: Long) {
+        println("Duration: ${millis}ms")
+        println()
     }
 }
