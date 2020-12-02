@@ -3,29 +3,26 @@ package advent
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class Day1Test : PuzzleRunner<Int, Int>() {
-    override val input = javaClass.getResourceAsStream("/Day1.txt").bufferedReader().readLines();
-    override val puzzle = Day1
+class Day2Test : PuzzleRunner<Int, Int>() {
+    override val input = javaClass.getResourceAsStream("/Day2.txt").bufferedReader().readLines();
+    override val puzzle = Day2
 
     private val exampleInput = """
-        1721
-        979
-        366
-        299
-        675
-        1456
+        1-3 a: abcde
+        1-3 b: cdefg
+        2-9 c: ccccccccc
     """.trimIndent()
 
     @Test
     fun `Part A example`() {
-        val correctAnswer = 514579
+        val correctAnswer = 2
         val actualAnswer = puzzle.partA(exampleInput.lines())
         assertEquals(correctAnswer, actualAnswer)
     }
 
     @Test
     fun `Part B example`() {
-        val correctAnswer = 241861950
+        val correctAnswer = 1
         val actualAnswer = puzzle.partB(exampleInput.lines())
         assertEquals(correctAnswer, actualAnswer)
     }
