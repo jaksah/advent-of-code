@@ -1,11 +1,7 @@
 package advent
 
 import org.junit.Test
-import java.util.*
-import kotlin.concurrent.timer
-import kotlin.concurrent.timerTask
 import kotlin.system.measureTimeMillis
-import kotlin.time.measureTime
 
 abstract class PuzzleRunner<A, B> {
     abstract val input: List<String>
